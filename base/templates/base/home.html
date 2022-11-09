@@ -2,10 +2,11 @@
 
 {% block content %}
 <p>Home Page</p>
+<a href="{% url 'create-room' %}">Create Room</a>
 
 <ul>
 {% for room in rooms %}
-    <li><a href="{% url 'room' room.id %}">{{ room.name }}</a></li>
+    <li><a href="{% url 'room' room.id %}">{{ room.name }}</a> <a href="{% url 'update-room' room.id%}">Edit</a></li>
 {% endfor %}
 </ul>
 
